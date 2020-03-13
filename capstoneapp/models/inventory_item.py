@@ -1,6 +1,6 @@
 from django.db import models
 from .brand import Brand
-from .user import User
+from .customer import Customer
 from .category import Category
 from django.urls import reverse
 
@@ -13,7 +13,7 @@ class InventoryItem(models.Model):
     image_path = models.CharField(max_length=250)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = ("item")
