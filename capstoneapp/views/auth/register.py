@@ -32,7 +32,7 @@ def register_user(request):
         login(request, new_user)
 
         # Redirect the browser to wherever you want to go after registering
-        return redirect(reverse('capstoneapp:trips'))
+        return redirect(reverse('capstoneapp:home'))
 
     # handles a request to load the empty form for the useer to fill out
     else:

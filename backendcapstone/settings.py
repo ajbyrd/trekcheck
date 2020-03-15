@@ -122,5 +122,5 @@ STATIC_URL = '/static/'
 
 
 
-LOGIN_REDIRECT_URL = '/trips'
+LOGIN_REDIRECT_URL = '/home'
 
