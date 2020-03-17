@@ -1,0 +1,159 @@
+  
+[
+    {
+      "model": "capstoneapp.inventoryitem",
+      "pk": 1,
+      "fields": {
+        "model_name": "Atmos AG 65",
+        "weight": 4.50,
+        "description": "backpack with 65L capacity",
+        "image_path": "",
+        "category": 1,
+        "brand": 1,
+        "user": 1
+      }
+    },
+    {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 2,
+        "fields": {
+          "model_name": "Flash 55",
+          "weight": 2.63,
+          "description": "backpack with 55L capacity",
+          "image_path": "",
+          "category": 1,
+          "brand": 2,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 3,
+        "fields": {
+          "model_name": "Terra 40",
+          "weight": 3.56,
+          "description": "backpack with 40L capacity",
+          "image_path": "",
+          "category": 1,
+          "brand": 3,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 4,
+        "fields": {
+          "model_name": "Magma 15",
+          "weight": 2.00,
+          "description": "16 degree temperature rating, DWR treated goose down",
+          "image_path": "",
+          "category": 2,
+          "brand": 2,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 5,
+        "fields": {
+          "model_name": "Hyperion 20",
+          "weight": 1.25,
+          "description": "20 degree temperature rating, goose down",
+          "image_path": "",
+          "category": 2,
+          "brand": 4,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 6,
+        "fields": {
+          "model_name": "Sine 15",
+          "weight": 1.88,
+          "description": "35 degree temperature rating, synthetic down",
+          "image_path": "",
+          "category": 2,
+          "brand": 5,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 7,
+        "fields": {
+          "model_name": "Koda 1",
+          "weight": 3.50,
+          "description": "Single person backpacking, three season",
+          "image_path": "",
+          "category": 3,
+          "brand": 6,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 8,
+        "fields": {
+          "model_name": "Montana",
+          "weight": 9.5,
+          "description": "8 person car camping, three season",
+          "image_path": "",
+          "category": 3,
+          "brand": 7,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 9,
+        "fields": {
+          "model_name": "Passage 2",
+          "weight": 4.13,
+          "description": "Two person backpacking, three season",
+          "image_path": "",
+          "category": 3,
+          "brand": 2,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 10,
+        "fields": {
+          "model_name": "NeoAir XLite",
+          "weight": 0.75,
+          "description": "3.2 R-value, air pad, 2.5 inches thick",
+          "image_path": "",
+          "category": 4,
+          "brand": 4,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 11,
+        "fields": {
+          "model_name": "Flash 3-Season",
+          "weight": 1.00,
+          "description": "3.2 R-value, air pad, 2 inches thick",
+          "image_path": "",
+          "category": 4,
+          "brand": 2,
+          "user": 1
+        }
+      },
+      {
+        "model": "capstoneapp.inventoryitem",
+        "pk": 12,
+        "fields": {
+          "model_name": "Switchback",
+          "weight": 0.91,
+          "description": "2.0 R-value, foam pad, 0.9 inches thick",
+          "image_path": "",
+          "category": 4,
+          "brand": 8,
+          "user": 1
+        }
+      }
+]

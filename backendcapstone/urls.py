@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', logout_user, name='logout'),
     path('home/', home, name='home'),
+    path('inventory/', inventory_list, name='inventory_items'),
 ]
