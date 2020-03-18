@@ -1,4 +1,7 @@
-{% comment %} {% load static %} {% endcomment %}
+
+{% extends 'shared/base.html' %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html>
@@ -7,17 +10,19 @@
     <title>Inventory</title>
   </head>
   <body>
-    {% comment %} <a href="{% url 'capstoneapp:item_form' %}">Add Item to Inventory</a> {% endcomment %}
+    <a href="{% url 'capstoneapp:inventoryform' %}">Add Item to Inventory</a>
 
     <h1>Inventory</h1>
 
-    <ol>
+    <ul>
     {% for item in all_items %}
         <li>
-            <a >{{item.brand}} {{ item.model_name }} </a>
-    description {{item.description}}
+            <a>{{item.brand}} {{ item.model_name }}: </a>
+    {{item.description}}
         </li>
     {% endfor %}
-    </ol>
+    </ul>
   </body>
 </html>
+
+{% endblock %}

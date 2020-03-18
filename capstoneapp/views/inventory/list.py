@@ -54,3 +54,20 @@ def inventory_list(request):
         }
 
         return render(request, template, context)
+
+    elif request.method == 'POST':
+        form_data = request.POST
+
+        new_item = InventoryItem(
+            model_name = form_data['model_name'],
+            weight = form_data['weight'],
+            description = form_data['description'],
+            image_path = form_data['image_path'],
+            user = request.user.Customer.id,
+            category = form_data['category'],
+            brand = form_data['brand']
+        )
+
+
+        print(new_item.Customer.user.username)
+        new_item.save()
