@@ -1,0 +1,30 @@
+[
+    {
+      "model": "capstoneapp.category",
+      "pk": 1,
+      "fields": {
+        "category_name": "Backpacks"
+      }
+    },
+    {
+      "model": "capstoneapp.category",
+      "pk": 2,
+      "fields": {
+        "category_name": "Sleeping Bags"
+      }
+    },
+    {
+      "model": "capstoneapp.category",
+      "pk": 3,
+      "fields": {
+        "category_name": "Tents"
+      }
+    },
+    {
+      "model": "capstoneapp.category",
+      "pk": 4,
+      "fields": {
+        "category_name": "Sleeping Pads"
+      }
+    }
+]

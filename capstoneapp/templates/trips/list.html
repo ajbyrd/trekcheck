@@ -1,0 +1,27 @@
+
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trips</title>
+  </head>
+  <body>
+    {% comment %} <a href="{% url 'capstoneapp:inventoryform' %}">Add Item to Inventory</a> {% endcomment %}
+
+    <h1>Trips</h1>
+
+    <ul>
+    {% for trip in all_trips %}
+        <li>
+            <a href="{% url 'capstoneapp:trip' trip.id %}">{{trip.trip_name}} {{ trip.trip_date }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>
+
+{% endblock %}

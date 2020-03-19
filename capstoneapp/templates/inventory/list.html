@@ -1,0 +1,28 @@
+
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inventory</title>
+  </head>
+  <body>
+    {% comment %} <a href="{% url 'capstoneapp:inventoryform' %}">Add Item to Inventory</a> {% endcomment %}
+
+    <h1>Inventory</h1>
+
+    <ul>
+    {% for item in all_items %}
+        <li>
+            <a href="{% url 'capstoneapp:item' item.id %}">{{item.brand}} {{ item.model_name }}: </a>
+    {{item.description}}
+        </li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>
+
+{% endblock %}

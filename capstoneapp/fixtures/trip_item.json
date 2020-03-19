@@ -1,0 +1,98 @@
+[
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 1,
+      "fields": {
+        "trip": 1,
+        "item": 1
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 2,
+      "fields": {
+        "trip": 1,
+        "item": 4
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 3,
+      "fields": {
+        "trip": 1,
+        "item": 7
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 4,
+      "fields": {
+        "trip": 1,
+        "item": 10
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 5,
+      "fields": {
+        "trip": 2,
+        "item": 2
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 6,
+      "fields": {
+        "trip": 2,
+        "item": 5
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 7,
+      "fields": {
+        "trip": 2,
+        "item": 8
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 8,
+      "fields": {
+        "trip": 2,
+        "item": 11
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 9,
+      "fields": {
+        "trip": 3,
+        "item": 3
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 10,
+      "fields": {
+        "trip": 3,
+        "item": 6
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 11,
+      "fields": {
+        "trip": 3,
+        "item": 9
+      }
+    },
+    {
+      "model": "capstoneapp.tripitem",
+      "pk": 12,
+      "fields": {
+        "trip": 3,
+        "item": 12
+      }
+    }
+]

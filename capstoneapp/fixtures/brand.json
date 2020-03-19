@@ -1,0 +1,58 @@
+[
+    {
+      "model": "capstoneapp.brand",
+      "pk": 1,
+      "fields": {
+        "brand_name": "Osprey"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 2,
+      "fields": {
+        "brand_name": "REI"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 3,
+      "fields": {
+        "brand_name": "The North Face"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 4,
+      "fields": {
+        "brand_name": "Therm-A-Rest"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 5,
+      "fields": {
+        "brand_name": "Kelty"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 6,
+      "fields": {
+        "brand_name": "ALPS Mountaineering"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 7,
+      "fields": {
+        "brand_name": "Coleman"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 8,
+      "fields": {
+        "brand_name": "Nemo"
+      }
+    }
+]

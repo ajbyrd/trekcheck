@@ -1,0 +1,65 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+
+
+
+<body>
+    <h1>Inventory Item</h1>
+
+    {% if item.id is not None %}
+        <form action="{% url 'capstoneapp:item' item.id %}" method="post">
+    {% else %}
+        <form action="{% url 'capstoneapp:items' %}" method="post">
+    {% endif %}
+        {% csrf_token %}
+        <fieldset>
+            <label for="brand_name">Brand: </label>
+            <input id="brand_name" type="text" name="brand_name" value="{{ brand.brand_name }}">
+        </fieldset>
+        <fieldset>
+            <label for="model_name">Model Name: </label>
+            <input id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
+        </fieldset>
+      <fieldset>
+            <label for="brand">Brand: </label>
+            <select id="brand" type="text" name="brand">
+                {% for brand in all_brands %}
+                <option {% if brand.id == item.brand %}selected{% endif %} value="{{ brand.id }}">
+                    {{ brand.brand_name }}</option>
+                {% endfor %}
+            </select>
+        </fieldset> 
+        <fieldset>
+            <label for="description">Year of publication: </label>
+            <input id="description" type="text" name="description" value="{{ item.description }}">
+        </fieldset>
+        <fieldset>
+            <label for="weight">Weight: </label>
+            <input id="weight" type="number" name="weight" value="{{ item.weight }}">
+        </fieldset>
+      <fieldset>
+            <label for="category">Category: </label>
+            <select id="category" type="text" name="category">
+                {% for category in all_categories %}
+                <option {% if category.id == item.category %}selected{% endif %} value="{{ category.id }}">
+                    {{ category.category_name }}</option>
+                {% endfor %}
+            </select>
+        </fieldset> 
+
+        {% if item.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
+
+    </form>
+</body>
+
+</html>
+
+
+{% endblock %}
