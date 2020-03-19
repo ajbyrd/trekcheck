@@ -1,0 +1,38 @@
+[
+    {
+      "model": "capstoneapp.trip",
+      "pk": 1,
+      "fields": {
+        "trip_name": "Zion National Park",
+        "trip_date": "2015-03-14",
+        "user": 1
+      }
+    },
+    {
+      "model": "capstoneapp.trip",
+      "pk": 2,
+      "fields": {
+        "trip_name": "Appalachian Trail - SMNP",
+        "trip_date": "2018-09-25",
+        "user": 1
+      }
+    },
+    {
+      "model": "capstoneapp.trip",
+      "pk": 3,
+      "fields": {
+        "trip_name": "Oak Mountain National Park",
+        "trip_date": "2019-06-08",
+        "user": 1
+      }
+    },
+    {
+      "model": "capstoneapp.trip",
+      "pk": 4,
+      "fields": {
+        "trip_name": "Yosemite",
+        "trip_date": "2020-03-14",
+        "user": 1
+      }
+    }
+]

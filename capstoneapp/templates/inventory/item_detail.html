@@ -1,0 +1,39 @@
+
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Item Details</title>
+</head>
+
+<body>
+
+    <section id="item-details">
+        <h1>{{ item.brand }} {{ item.model_name }}</h1>
+        <h2>{{ item.category }}</h2>
+
+        <div>Description: {{ item.description }}</div>
+        <div>Weight: {{ item.weight }} lbs</div>
+    </section>
+
+    {% comment %} <section id="item-actions" style="display:flex;">
+        <form action="{% url 'capstoneapp:item' item.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button>Delete</button>
+        </form>
+
+        <form action="{% url 'capstoneapp:item_edit_form' item.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+    </section> {% endcomment %}
+
+</body>
+
+</html>
+
+{% endblock %}

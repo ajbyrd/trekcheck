@@ -28,5 +28,8 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('home/', home, name='home'),
     path('inventory/', inventory_list, name='inventory'),
-    path('inventoryform/', inventory_form, name='inventoryform')
+    # path('inventoryform/', inventory_form, name='inventoryform')
+    path('inventory/<int:item_id>/', item_details, name='item'),
+    path('trips/', trip_list, name='trips'),
+    path('trips/<int:trip_id>/', trip_details, name='trip')
 ]

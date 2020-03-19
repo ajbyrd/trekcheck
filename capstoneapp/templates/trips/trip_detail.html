@@ -1,0 +1,36 @@
+
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Trip Details</title>
+</head>
+
+<body>
+
+    <section id="trip-details">
+        <h1>{{ trip.trip_name }} </h1>
+        <h2>{{ trip.trip_date }}</h2>
+    </section>
+
+    {% comment %} <section id="item-actions" style="display:flex;">
+        <form action="{% url 'capstoneapp:item' item.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button>Delete</button>
+        </form>
+
+        <form action="{% url 'capstoneapp:item_edit_form' item.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+    </section> {% endcomment %}
+
+</body>
+
+</html>
+
+{% endblock %}

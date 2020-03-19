@@ -22,23 +22,32 @@
             <label for="model_name">Model Name: </label>
             <input id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
         </fieldset>
+      <fieldset>
+            <label for="brand">Brand: </label>
+            <select id="brand" type="text" name="brand">
+                {% for brand in all_brands %}
+                <option {% if brand.id == item.brand %}selected{% endif %} value="{{ brand.id }}">
+                    {{ brand.brand_name }}</option>
+                {% endfor %}
+            </select>
+        </fieldset> 
         <fieldset>
             <label for="description">Year of publication: </label>
             <input id="description" type="text" name="description" value="{{ item.description }}">
         </fieldset>
         <fieldset>
-            <label for="weight">ISBN: </label>
+            <label for="weight">Weight: </label>
             <input id="weight" type="number" name="weight" value="{{ item.weight }}">
         </fieldset>
-        {% comment %} <fieldset>
-            <label for="location">Library: </label>
-            <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                <option {% if library.id == book.location_id %}selected{% endif %} value="{{ library.id }}">
-                    {{ library.title }}</option>
+      <fieldset>
+            <label for="category">Category: </label>
+            <select id="category" type="text" name="category">
+                {% for category in all_categories %}
+                <option {% if category.id == item.category %}selected{% endif %} value="{{ category.id }}">
+                    {{ category.category_name }}</option>
                 {% endfor %}
             </select>
-        </fieldset> {% endcomment %}
+        </fieldset> 
 
         {% if item.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
