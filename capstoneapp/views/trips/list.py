@@ -11,7 +11,7 @@ def trip_list(request):
 
     if request.method == 'GET':
 
-        all_trips = Trip.objects.all()
+        all_trips = Trip.objects.filter(user__user_id = request.user.id)
 
         trip_name = request.GET.get('trip_name', None)
         
