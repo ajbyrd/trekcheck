@@ -26,11 +26,11 @@
             <button>Delete</button>
         </form>
 
-        <form action="{% url 'capstoneapp:item_edit_form' item.id %}" method="GET">
+    </section> {% endcomment %}
+        <form action="{% url 'capstoneapp:inventory_edit_form' item.id %}">
             {% csrf_token %}
             <button>Edit</button>
         </form>
-    </section> {% endcomment %}
 
 </body>
 

@@ -6,38 +6,46 @@ from capstoneapp.models import Brand
 from capstoneapp.models import Category
 from capstoneapp.models import Customer
 from ..connection import Connection
-from .details import get_book
+from .item_details import get_item
 
 
 def get_categories():
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = sqlite3.Row
-        db_cursor = conn.cursor()
+    # with sqlite3.connect(Connection.db_path) as conn:
+    #     conn.row_factory = sqlite3.Row
+    #     db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-        select
-            cc.id,
-            cc.category_name,
+    #     db_cursor.execute("""
+    #     select
+    #         cc.id,
+    #         cc.category_name,
             
-        from capstoneapp_category cc
-        """)
+    #     from capstoneapp_category cc
+    #     """)
 
-        return db_cursor.fetchall()
+    #     return db_cursor.fetchall()
+
+    all_categories = Category.objects.all()
         
 def get_brands():
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = sqlite3.Row
-        db_cursor = conn.cursor()
+    # with sqlite3.connect(Connection.db_path) as conn:
+    #     conn.row_factory = sqlite3.Row
+    #     db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-        select
-            cb.id,
-            cb.brand_name,
+    #     db_cursor.execute("""
+    #     select
+    #         cb.id,
+    #         cb.brand_name,
             
-        from capstoneapp_brand cb
-        """)
+    #     from capstoneapp_brand cb
+    #     """)
 
-        return db_cursor.fetchall()
+    #     return db_cursor.fetchall()
+
+    all_brands = Brand.objects.all()
+
+def get_item(item_id):
+    
+    return InventoryItem.objects.get(pk=item_id)
 
 @login_required
 def inventory_form(request):

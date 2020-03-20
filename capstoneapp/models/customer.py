@@ -15,16 +15,16 @@ class Customer(models.Model):
     #     return f'{self.user.first_name} {self.user.last_name}'
 
 
-    # # Every time a `User` is created, a matching `Librarian`
-    # # object will be created and attached as a one-to-one
-    # # property
-    # @receiver(post_save, sender=User)
-    # def create_customer(sender, instance, created, **kwargs):
-    #     if created:
-    #         Customer.objects.create(user=instance)
+    # Every time a `User` is created, a matching `Librarian`
+    # object will be created and attached as a one-to-one
+    # property
+    @receiver(post_save, sender=User)
+    def create_customer(sender, instance, created, **kwargs):
+        if created:
+            Customer.objects.create(user=instance)
 
-    # # Every time a `User` is saved, its matching `Librarian`
-    # # object will be saved.
-    # @receiver(post_save, sender=User)
-    # def save_customer(sender, instance, **kwargs):
-    #     instance.customer.save()
+    # Every time a `User` is saved, its matching `Librarian`
+    # object will be saved.
+    @receiver(post_save, sender=User)
+    def save_customer(sender, instance, **kwargs):
+        instance.customer.save()
