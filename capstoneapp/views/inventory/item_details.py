@@ -8,25 +8,7 @@ from ..connection import Connection
 
 
 def get_item(item_id):
-    # with sqlite3.connect(Connection.db_path) as conn:
-    #     conn.row_factory = model_factory(Book)
-    #     db_cursor = conn.cursor()
 
-    #     db_cursor.execute("""
-    #     SELECT
-    #         b.id,
-    #         b.title,
-    #         b.isbn,
-    #         b.author,
-    #         b.year,
-    #         b.librarian_id,
-    #         b.location_id
-    #     FROM capstoneapp_book b
-    #     WHERE b.id = ?
-    #     """, (book_id,))
-
-    #     return db_cursor.fetchone()
-      
     return InventoryItem.objects.get(pk=item_id)
 
 
@@ -45,24 +27,7 @@ def item_details(request, item_id):
             "actual_method" in form_data
             and form_data["actual_method"] == "PUT"
         ):
-            # with sqlite3.connect(Connection.db_path) as conn:
-            #     db_cursor = conn.cursor()
 
-            #     db_cursor.execute("""
-            #     UPDATE capstoneapp_book
-            #     SET title = ?,
-            #         author = ?,
-            #         isbn = ?,
-            #         year = ?,
-            #         location_id = ?
-            #     WHERE id = ?
-            #     """,
-            #     (
-            #         form_data['title'], form_data['author'],
-            #         form_data['isbn'], form_data['year_published'],
-            #         form_data["location"], book_id,
-            #     ))
-                
             # # retrieve it first:
             item_to_update = InventoryItem.objects.get(pk=item_id)
 
@@ -86,13 +51,7 @@ def item_details(request, item_id):
             "actual_method" in form_data
             and form_data["actual_method"] == "DELETE"
         ):
-            # with sqlite3.connect(Connection.db_path) as conn:
-            #     db_cursor = conn.cursor()
 
-            #     db_cursor.execute("""
-            #         DELETE FROM capstoneapp_book
-            #         WHERE id = ?
-            #     """, (book_id,))
                 
             item = InventoryItem.objects.get(pk=item_id)
             item.delete()

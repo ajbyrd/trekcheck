@@ -8,7 +8,7 @@ class InventoryItem(models.Model):
 
 
     model_name = models.CharField(max_length=50)
-    weight = models.IntegerField()
+    weight = models.FloatField()
     description = models.CharField(max_length=250)
     image_path = models.CharField(max_length=250)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
