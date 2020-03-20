@@ -1,4 +1,7 @@
 # trekcheck
+
+Trekcheck is a web application that allows users to organize maintain a centralized inventory of all of their outdoor gear and create individualized gear lists for specific camping trips. This is a Django web application built using Python and the Django ORM.
+
 ## Steps to get your project started:
 
 * Clone down your team's repo and `cd` into it
