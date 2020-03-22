@@ -53,11 +53,10 @@ def trip_form(request):
     if request.method == 'GET':
 
         template = 'trips/form.html'
-        context = {
-            
-        }
 
-        return render(request, template, context)
+        
+
+        return render(request, template)
       
 @login_required
 def trip_edit_form(request, trip_id):

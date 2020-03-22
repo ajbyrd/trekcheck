@@ -25,6 +25,8 @@ def get_categories():
     #     return db_cursor.fetchall()
 
     all_categories = Category.objects.all()
+
+    return all_categories
         
 def get_brands():
     # with sqlite3.connect(Connection.db_path) as conn:
@@ -43,6 +45,8 @@ def get_brands():
 
     all_brands = Brand.objects.all()
 
+    return all_brands
+
 def get_item(item_id):
     
     return InventoryItem.objects.get(pk=item_id)
@@ -50,7 +54,7 @@ def get_item(item_id):
 @login_required
 def inventory_form(request):
     
-    print(request.user.id)
+    
     if request.method == 'GET':
         categories = get_categories()
         brands = get_brands()

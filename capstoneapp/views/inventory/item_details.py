@@ -36,9 +36,9 @@ def item_details(request, item_id):
             item_to_update.weight = form_data['weight']
             item_to_update.description = form_data['description']
             item_to_update.image_path = form_data['image_path']
-            item_to_update.brand = form_data['brand']
-            item_to_update.category = form_data['category']            
-            item_to_update.user = request.user.id           
+            item_to_update.brand_id = form_data['brand']
+            item_to_update.category_id = form_data['category']            
+            item_to_update.user_id = request.user.id           
 
 
             # # Save the change to the db

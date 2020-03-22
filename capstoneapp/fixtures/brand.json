@@ -52,7 +52,21 @@
       "model": "capstoneapp.brand",
       "pk": 8,
       "fields": {
-        "brand_name": "Nemo"
+        "brand_name": "Patagonia"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 9,
+      "fields": {
+        "brand_name": "Mountain Hardwear"
+      }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 10,
+      "fields": {
+        "brand_name": "Orvis"
       }
     }
 ]

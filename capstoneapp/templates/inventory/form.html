@@ -14,39 +14,48 @@
         <form action="{% url 'capstoneapp:inventory' %}" method="post">
     {% endif %}
         {% csrf_token %}
-        <fieldset>
+        {% comment %} <fieldset>
             <label for="brand_name">Brand: </label>
             <input id="brand_name" type="text" name="brand_name" value="{{ item.brand.brand_name }}">
-        </fieldset>
+        </fieldset> {% endcomment %}
         <fieldset>
             <label for="model_name">Model Name: </label>
             <input id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
         </fieldset>
-        <fieldset>
+        {% comment %} <fieldset>
             <label for="category_name">Category: </label>
             <input id="category_name" type="text" name="category_name" value="{{ item.category.category_name }}">
-        </fieldset>
+        </fieldset> {% endcomment %}
+      <fieldset>
+            <label for="category_name">Category: </label>
+            <select id="category_name" type="text" name="category_name">
+                {% for category in all_categories %}
+                <option {% if category.id == item.category_id %}selected{% endif %} value="{{ category.id }}">
+                    {{ category.category_name }}</option>
+                {% endfor %}
+            </select>
+        </fieldset>  
+      <fieldset>
+            <label for="brand_name">Brand: </label>
+            <select id="brand_name" type="text" name="brand_name">
+                {% for brand in all_brands %}
+                <option {% if brand.id == item.brand_id %}selected{% endif %} value="{{ brand.id }}">
+                    {{ brand.brand_name }}</option>
+                {% endfor %}
+            </select>
+        </fieldset>  
         <fieldset>
             <label for="description">Description </label>
             <input id="description" type="text" name="description" value="{{ item.description }}">
         </fieldset>
         <fieldset>
-            <label for="image_path">Image Path </label>
-            <input id="image_path" type="text" name="image_path" value="{{ item.image_path }}">
-        </fieldset>
-        <fieldset>
             <label for="weight">Weight: </label>
             <input id="weight" type="float" name="weight" value="{{ item.weight }}">
         </fieldset>
-      {% comment %} <fieldset>
-            <label for="category">Category: </label>
-            <select id="category" type="text" name="category">
-                {% for category in all_categories %}
-                <option {% if category.id == item.category %}selected{% endif %} value="{{ category.id }}">
-                    {{ category.category_name }}</option>
-                {% endfor %}
-            </select>
-        </fieldset>  {% endcomment %}
+        <fieldset>
+            <label for="image_path">Image Path </label>
+            <input id="image_path" type="text" name="image_path" value="{{ item.image_path }}">
+        </fieldset>
 
         {% if item.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
