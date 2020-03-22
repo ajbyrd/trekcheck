@@ -1,6 +1,6 @@
 import sqlite3
 from django.shortcuts import redirect, render, reverse
-from capstoneapp.models import InventoryItem, Customer
+from capstoneapp.models import InventoryItem, Customer, Category, Brand
 
 
 
@@ -29,16 +29,30 @@ def inventory_list(request):
     elif request.method == 'POST':
         form_data = request.POST
 
+        # new_category = Category.objects.create(
+        #     category_name = form_data['category_name']
+        # )
+
+        # new_brand = Brand.objects.create(
+        
+        #    brand_name = form_data['brand_name']
+
+        # )
+
+        # new_category.save()
+
+        # new_brand.save()
+
         new_item = InventoryItem.objects.create(
             model_name = form_data['model_name'],
             weight = form_data['weight'],
             description = form_data['description'],
             image_path = form_data['image_path'],
-            user = request.user.id,
+            user_id = request.user.id,
             category_id = form_data['category_name'],
             brand_id = form_data['brand_name']
         )
 
-
-       
         new_item.save()
+
+        return redirect(reverse('capstoneapp:inventory'))

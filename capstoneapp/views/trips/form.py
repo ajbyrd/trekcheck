@@ -7,7 +7,7 @@ from capstoneapp.models import TripItem
 from capstoneapp.models import Brand
 from capstoneapp.models import Category
 from capstoneapp.models import Customer
-from ..connection import Connection
+
 from .trip_details import get_trip
 
 # def get_categories():

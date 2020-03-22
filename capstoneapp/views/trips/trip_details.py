@@ -3,8 +3,8 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from capstoneapp.models import InventoryItem, Category, Customer, Brand, Trip, TripItem
-# from capstoneapp.models import model_factory
-from ..connection import Connection
+
+
 
 
 def get_trip(trip_id):

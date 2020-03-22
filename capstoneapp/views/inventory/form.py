@@ -5,7 +5,7 @@ from capstoneapp.models import InventoryItem
 from capstoneapp.models import Brand
 from capstoneapp.models import Category
 from capstoneapp.models import Customer
-from ..connection import Connection
+
 from .item_details import get_item
 
 
@@ -49,6 +49,8 @@ def get_item(item_id):
 
 @login_required
 def inventory_form(request):
+    
+    print(request.user.id)
     if request.method == 'GET':
         categories = get_categories()
         brands = get_brands()

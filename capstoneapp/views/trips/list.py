@@ -32,7 +32,7 @@ def trip_list(request):
         new_trip = Trip(
             trip_name = form_data['model_name'],
             trip_date = form_data['weight'],
-            user = request.user.Customer.id
+            user = request.user.id
         )
 
 

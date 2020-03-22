@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from capstoneapp.models import InventoryItem, Category, Customer, Brand
 # from capstoneapp.models import model_factory
-from ..connection import Connection
+
 
 
 def get_item(item_id):
@@ -38,7 +38,7 @@ def item_details(request, item_id):
             item_to_update.image_path = form_data['image_path']
             item_to_update.brand = form_data['brand']
             item_to_update.category = form_data['category']            
-            item_to_update.user = request.user.Customer.id           
+            item_to_update.user = request.user.id           
 
 
             # # Save the change to the db
