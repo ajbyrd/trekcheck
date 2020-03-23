@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+
+
+
+<body>
+    <h1>Trip</h1>
+
+    {% if trip.id is not None %}
+        <form action="{% url 'capstoneapp:trip' trip.id %}" method="post">
+    {% else %} 
+        <form action="{% url 'capstoneapp:trips' %}" method="post">
+    {% endif %}
+        {% csrf_token %}
+        <fieldset>
+            <label for="trip_name">Trip Name </label>
+            <input id="trip_name" type="text" name="trip_name" value="{{ trip.trip_name }}">
+        </fieldset>
+        <fieldset>
+            <label for="trip_date">Date </label>
+            <input id="trip_date" type="date" name="trip_date" value="{{ trip.trip_date }}">
+        </fieldset>
+
+
+        {% if trip.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
+
+    </form>
+</body>
+
+</html>
+
+
+{% endblock %}

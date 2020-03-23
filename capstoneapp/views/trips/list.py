@@ -11,7 +11,7 @@ def trip_list(request):
 
     if request.method == 'GET':
 
-        all_trips = Trip.objects.all()
+        all_trips = Trip.objects.filter(user__user_id = request.user.id)
 
         trip_name = request.GET.get('trip_name', None)
         
@@ -30,11 +30,11 @@ def trip_list(request):
         form_data = request.POST
 
         new_trip = Trip(
-            trip_name = form_data['model_name'],
-            trip_date = form_data['weight'],
-            user = request.user.Customer.id
+            trip_name = form_data['trip_name'],
+            trip_date = form_data['trip_date'],
+            user_id = request.user.id
         )
-
-
-        print(new_trip.Customer.user.username)
+        
         new_trip.save()
+
+        return redirect(reverse('capstoneapp:trips'))

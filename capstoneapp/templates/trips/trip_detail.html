@@ -16,18 +16,18 @@
         <h2>{{ trip.trip_date }}</h2>
     </section>
 
-    {% comment %} <section id="item-actions" style="display:flex;">
-        <form action="{% url 'capstoneapp:item' item.id %}" method="POST">
+    <section id="item-actions" style="display:flex;">
+        <form onclick="return confirm('Are you sure you want to delete this trip?')" action="{% url 'capstoneapp:trip' trip.id %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="actual_method" value="DELETE">
             <button>Delete</button>
-        </form>
+        </form> 
 
-        <form action="{% url 'capstoneapp:item_edit_form' item.id %}" method="GET">
+        <form action="{% url 'capstoneapp:trip_edit_form' trip.id %}" method="GET">
             {% csrf_token %}
             <button>Edit</button>
         </form>
-    </section> {% endcomment %}
+    </section> 
 
 </body>
 

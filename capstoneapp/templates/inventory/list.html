@@ -22,7 +22,6 @@
             <a href="{% url 'capstoneapp:item' item.id %}">{{item.brand}} {{ item.model_name }}: </a>
     {{item.description}}
         </li>
-        <a href="{% url 'capstoneapp:inventory_edit_form' item.id %}">Edit Item</a>
     {% endfor %}
     </ul>
   </body>
