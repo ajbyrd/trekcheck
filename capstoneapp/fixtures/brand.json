@@ -68,5 +68,12 @@
       "fields": {
         "brand_name": "Orvis"
       }
+    },
+    {
+      "model": "capstoneapp.brand",
+      "pk": 11,
+      "fields": {
+        "brand_name": "Nemo"
+      }
     }
 ]

@@ -9,7 +9,7 @@
     <h1>Inventory Item</h1>
 
     {% if item.id is not None %}
-        <form action="{% url 'capstoneapp:inventory_edit_form' item.id %}" method="post">
+        <form action="{% url 'capstoneapp:item' item.id %}" method="post">
     {% else %} 
         <form action="{% url 'capstoneapp:inventory' %}" method="post">
     {% endif %}

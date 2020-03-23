@@ -9,9 +9,9 @@
     <h1>Trip</h1>
 
     {% if trip.id is not None %}
-        <form action="{% url 'capstoneapp:trip_edit_form' trip.id %}" method="post">
+        <form action="{% url 'capstoneapp:trip' trip.id %}" method="post">
     {% else %} 
-        <form action="{% url 'capstoneapp:trip_form' %}" method="post">
+        <form action="{% url 'capstoneapp:trips' %}" method="post">
     {% endif %}
         {% csrf_token %}
         <fieldset>

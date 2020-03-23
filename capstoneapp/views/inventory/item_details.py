@@ -22,7 +22,7 @@ def item_details(request, item_id):
     elif request.method == 'POST':
         form_data = request.POST
 
-        # Check if this POST is for editing a book
+        # Check if this POST is for editing aan item
         if (
             "actual_method" in form_data
             and form_data["actual_method"] == "PUT"
@@ -36,9 +36,9 @@ def item_details(request, item_id):
             item_to_update.weight = form_data['weight']
             item_to_update.description = form_data['description']
             item_to_update.image_path = form_data['image_path']
-            item_to_update.brand_id = form_data['brand']
-            item_to_update.category_id = form_data['category']            
-            item_to_update.user_id = request.user.id           
+            item_to_update.brand_id = form_data['brand_name']
+            item_to_update.category_id = form_data['category_name']            
+            # item_to_update.user = request.user.id           
 
 
             # # Save the change to the db

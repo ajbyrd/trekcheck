@@ -30,8 +30,8 @@ def trip_list(request):
         form_data = request.POST
 
         new_trip = Trip(
-            trip_name = form_data['model_name'],
-            trip_date = form_data['weight'],
+            trip_name = form_data['trip_name'],
+            trip_date = form_data['trip_date'],
             user_id = request.user.id
         )
         

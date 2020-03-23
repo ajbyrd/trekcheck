@@ -34,5 +34,5 @@ urlpatterns = [
     path('trips/', trip_list, name='trips'),
     path('trips/<int:trip_id>/', trip_details, name='trip'),
     path('tripform/', trip_form, name='trip_form'),
-    path('trips/<int:trip_id>/form/', trip_edit_form, name='trip_edit_form'),
+    path('trips/<int:trip_id>/form/', trip_edit_form, name='trip_edit_form'), 
 ]
