@@ -12,8 +12,12 @@ def get_trip_items(trip_id):
 
     return trip_items
 
+def get_inventory(request):
 
+    all_items = InventoryItem.objects.filter(user__user_id = request.user.id)
 
+    return all_items
+    
 def get_trip(trip_id):
 
     return Trip.objects.get(pk=trip_id)
@@ -22,11 +26,12 @@ def get_trip(trip_id):
 @login_required
 def trip_details(request, trip_id):
     if request.method == 'GET':
+        all_items = get_inventory(request)
         trip = get_trip(trip_id)
         trip_items = get_trip_items(trip_id)
         template_name = 'trips/trip_detail.html'
         return render(request, template_name, {'trip': trip,
-        'trip_items': trip_items})
+        'trip_items': trip_items, 'all_items': all_items})
 
     elif request.method == 'POST':
         form_data = request.POST

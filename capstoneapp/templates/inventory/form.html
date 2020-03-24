@@ -54,10 +54,10 @@
             <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="weight" type="float" name="weight" value="{{ item.weight }}">
             </div>
         </fieldset>
-        {% comment %} <div>
+       {% comment %} <div>
             <label for="image_path">Image Path </label>
             <input id="image_path" type="text" name="image_path" value="{{ item.image_path }}">
-        </div> {% endcomment %}
+        </div>  {% endcomment %}
 
         {% if item.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
