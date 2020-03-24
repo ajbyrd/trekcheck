@@ -10,10 +10,17 @@
 </head>
 
 <body>
-
+<div class='tc'>
     <section id="trip-details">
         <h1>{{ trip.trip_name }} </h1>
         <h2>{{ trip.trip_date }}</h2>
+    {% for trip_item in trip_items %}
+        <div>{{trip_item.item.category}}: {{ trip_item.item.brand}} {{ trip_item.item}}</div>
+
+    {% endfor %}
+
+    <div>Total Gear Weight = </div>
+
     </section>
 
     <section id="item-actions" style="display:flex;">
@@ -28,6 +35,7 @@
             <button>Edit</button>
         </form>
     </section> 
+    </div>
 
 </body>
 

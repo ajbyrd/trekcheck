@@ -4,9 +4,6 @@ from capstoneapp.models import InventoryItem, Trip, TripItem
 
 
 
-
-
-
 def trip_list(request):
 
     if request.method == 'GET':

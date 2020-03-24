@@ -6,65 +6,77 @@
 
 
 <body>
-    <h1>Inventory Item</h1>
 
     {% if item.id is not None %}
-        <form action="{% url 'capstoneapp:item' item.id %}" method="post">
+        <form class="measure center" action="{% url 'capstoneapp:item' item.id %}" method="post">
     {% else %} 
-        <form action="{% url 'capstoneapp:inventory' %}" method="post">
+        <form class="measure center" action="{% url 'capstoneapp:inventory' %}" method="post">
     {% endif %}
+    <h1 class="f4 fw6 ph0 mh0">Inventory Item</h1>
         {% csrf_token %}
-        {% comment %} <fieldset>
+        {% comment %} <div>
             <label for="brand_name">Brand: </label>
             <input id="brand_name" type="text" name="brand_name" value="{{ item.brand.brand_name }}">
-        </fieldset> {% endcomment %}
-        <fieldset>
-            <label for="model_name">Model Name: </label>
-            <input id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
-        </fieldset>
-        {% comment %} <fieldset>
+        </div> {% endcomment %}
+        <fieldset class="ba b--transparent ph0 mh0">
+        <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="model_name">Model Name: </label>
+            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
+        </div>
+        {% comment %} <div>
             <label for="category_name">Category: </label>
             <input id="category_name" type="text" name="category_name" value="{{ item.category.category_name }}">
-        </fieldset> {% endcomment %}
-      <fieldset>
-            <label for="category_name">Category: </label>
-            <select id="category_name" type="text" name="category_name">
+        </div> {% endcomment %}
+      <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="category_name">Category: </label>
+            <select  class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"id="category_name" type="text" name="category_name">
                 {% for category in all_categories %}
-                <option {% if category.id == item.category_id %}selected{% endif %} value="{{ category.id }}">
+                <option {% if category.id == item.category_id %}selected{% endif %}  value="{{ category.id }}">
                     {{ category.category_name }}</option>
                 {% endfor %}
             </select>
-        </fieldset>  
-      <fieldset>
-            <label for="brand_name">Brand: </label>
-            <select id="brand_name" type="text" name="brand_name">
+        </div> 
+      <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="brand_name">Brand: </label>
+            <select class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="brand_name" type="text" name="brand_name">
                 {% for brand in all_brands %}
                 <option {% if brand.id == item.brand_id %}selected{% endif %} value="{{ brand.id }}">
                     {{ brand.brand_name }}</option>
                 {% endfor %}
             </select>
-        </fieldset>  
-        <fieldset>
-            <label for="description">Description </label>
-            <input id="description" type="text" name="description" value="{{ item.description }}">
+        </div>  
+        <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="description">Description: </label>
+            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="description" type="text" name="description" value="{{ item.description }}">
+        </div>
+        <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="weight">Weight: </label>
+            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="weight" type="float" name="weight" value="{{ item.weight }}">
+            </div>
         </fieldset>
-        <fieldset>
-            <label for="weight">Weight: </label>
-            <input id="weight" type="float" name="weight" value="{{ item.weight }}">
-        </fieldset>
-        <fieldset>
+        {% comment %} <div>
             <label for="image_path">Image Path </label>
             <input id="image_path" type="text" name="image_path" value="{{ item.image_path }}">
-        </fieldset>
+        </div> {% endcomment %}
 
         {% if item.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
-            <input type="submit" value="Update" />
+            <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Update" />
         {% else %}
-            <input type="submit" value="Create" />
+            <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib tc" type="submit" value="Create" />
         {% endif %}
 
     </form>
+
+<form class="tc pa3" action="{% url 'capstoneapp:categoryform' %}">
+    <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Category</button>
+</form> 
+
+
+<form class="tc" action="{% url 'capstoneapp:brandform' %}">
+    <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Brand</button>
+</form> 
+
 </body>
 
 </html>

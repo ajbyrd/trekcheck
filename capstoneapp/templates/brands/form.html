@@ -1,0 +1,27 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<body>
+
+    <form class="measure center" action="{% url 'capstoneapp:brands' %}" method="post">
+    <h1 class="f4 fw6 ph0 mh0">New  Brand</h1>
+
+        {% csrf_token %}
+        <fieldset class="ba b--transparent ph0 mh0">
+        <div class="mt3">
+            <label class="db fw6 lh-copy f6"  for="brand_name">Brand Name </label>
+            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"  id="brand_name" type="text" name="brand_name" value="{{ brand.brand_name }}">
+            </div>
+        </fieldset>
+
+
+        <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Create" />
+
+    </form>
+</body>
+
+</html>
+
+
+{% endblock %}

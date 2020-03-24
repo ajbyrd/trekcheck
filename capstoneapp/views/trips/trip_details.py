@@ -4,6 +4,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from capstoneapp.models import InventoryItem, Category, Customer, Brand, Trip, TripItem
 
+def get_trip_items(trip_id):
+
+
+    trip_items = TripItem.objects.filter(trip_id = trip_id)
+    print(trip_items)
+
+    return trip_items
 
 
 
@@ -16,8 +23,10 @@ def get_trip(trip_id):
 def trip_details(request, trip_id):
     if request.method == 'GET':
         trip = get_trip(trip_id)
+        trip_items = get_trip_items(trip_id)
         template_name = 'trips/trip_detail.html'
-        return render(request, template_name, {'trip': trip})
+        return render(request, template_name, {'trip': trip,
+        'trip_items': trip_items})
 
     elif request.method == 'POST':
         form_data = request.POST
