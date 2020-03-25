@@ -18,8 +18,12 @@
         <div>{{trip_item.item.category}}: {{ trip_item.item.brand}} {{ trip_item.item}}</div>
 
     {% endfor %}
+{% for trip_item in trip_items %} 
+    <div>Total Gear Weight = {{trip_item.item.weight}}
+ {% endfor %}
+    
+     </div>
 
-    <div>Total Gear Weight = </div>
 
     </section>
 
@@ -42,10 +46,10 @@
                 {% endfor %}
             </select>
 </form>
-        <form   method="GET">
+        <form action="{% url capstoneapp:trip trip.id %}"  method="post">
             {% csrf_token %}
             <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Item to Gear List</button>
-        </form>
+        </form> 
 
     
     </section> 

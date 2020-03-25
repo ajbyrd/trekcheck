@@ -17,10 +17,24 @@ def get_inventory(request):
     all_items = InventoryItem.objects.filter(user__user_id = request.user.id)
 
     return all_items
-    
+
 def get_trip(trip_id):
 
     return Trip.objects.get(pk=trip_id)
+
+def create_trip_item(request, trip_id):
+
+    form_data = request.POST
+
+    new_trip_item = TripItem.objects.create(
+    trip_id = trip_id,
+    item_id = form_data['item']
+    )
+
+    new_trip_item.save()
+
+    return redirect(reverse('capstoneapp:trip'))
+
 
 
 @login_required
