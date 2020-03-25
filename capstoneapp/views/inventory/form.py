@@ -10,38 +10,12 @@ from .item_details import get_item
 
 
 def get_categories():
-    # with sqlite3.connect(Connection.db_path) as conn:
-    #     conn.row_factory = sqlite3.Row
-    #     db_cursor = conn.cursor()
-
-    #     db_cursor.execute("""
-    #     select
-    #         cc.id,
-    #         cc.category_name,
-            
-    #     from capstoneapp_category cc
-    #     """)
-
-    #     return db_cursor.fetchall()
 
     all_categories = Category.objects.all()
 
     return all_categories
         
 def get_brands():
-    # with sqlite3.connect(Connection.db_path) as conn:
-    #     conn.row_factory = sqlite3.Row
-    #     db_cursor = conn.cursor()
-
-    #     db_cursor.execute("""
-    #     select
-    #         cb.id,
-    #         cb.brand_name,
-            
-    #     from capstoneapp_brand cb
-    #     """)
-
-    #     return db_cursor.fetchall()
 
     all_brands = Brand.objects.all()
 

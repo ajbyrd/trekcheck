@@ -4,11 +4,11 @@
 {% block content %}
 
 
-<h2>Login</h2>
-<form method="post">
+<form class="measure center" method="post">
+<h2 class="f4 fw6 ph0 mh0">Please log in below</h2>
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <button class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit">Login</button>
 </form>
 
 {% endblock %}
