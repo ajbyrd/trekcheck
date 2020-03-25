@@ -11,3 +11,4 @@ from .brands.list import brand_list
 from .brands.form import brand_form
 from .categories.list import category_list
 from .categories.form import category_form
+from .trip_items.list import trip_items_list

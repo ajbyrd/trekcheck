@@ -3,49 +3,27 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from capstoneapp.models import InventoryItem, Category, Customer, Brand, Trip, TripItem
+from django.db.models import Sum
 
-def get_trip_items(trip_id):
 
 
-    trip_items = TripItem.objects.filter(trip_id = trip_id)
-    print(trip_items)
-
-    return trip_items
-
-def get_inventory(request):
-
-    all_items = InventoryItem.objects.filter(user__user_id = request.user.id)
-
-    return all_items
-
-def get_trip(trip_id):
-
-    return Trip.objects.get(pk=trip_id)
-
-def create_trip_item(request, trip_id):
-
-    form_data = request.POST
-
-    new_trip_item = TripItem.objects.create(
-    trip_id = trip_id,
-    item_id = form_data['item']
-    )
-
-    new_trip_item.save()
-
-    return redirect(reverse('capstoneapp:trip'))
-
+def trip_item_weight_sum(trip_id):
+    
+    trip_item_weight_sum= TripItem.objects.filter(trip_id = trip_id).aggregate(Sum('item_id__weight'))['item_id__weight__sum']
+    print(trip_item_weight_sum)
+    return trip_item_weight_sum
 
 
 @login_required
 def trip_details(request, trip_id):
     if request.method == 'GET':
-        all_items = get_inventory(request)
-        trip = get_trip(trip_id)
-        trip_items = get_trip_items(trip_id)
+        all_items = InventoryItem.objects.filter(user__user_id = request.user.id)
+        trip = Trip.objects.get(pk=trip_id)
+        trip_items = TripItem.objects.filter(trip_id = trip_id)
+        trip_weight = trip_item_weight_sum(trip_id)
         template_name = 'trips/trip_detail.html'
         return render(request, template_name, {'trip': trip,
-        'trip_items': trip_items, 'all_items': all_items})
+        'trip_items': trip_items, 'all_items': all_items, 'trip_weight': trip_weight})
 
     elif request.method == 'POST':
         form_data = request.POST
@@ -64,7 +42,7 @@ def trip_details(request, trip_id):
 
             trip_to_update.trip_name = form_data['trip_name']
             trip_to_update.trip_date = form_data['trip_date']            
-            # trip_to_update.user = request.user.Customer.id           
+                     
 
 
             # # Save the change to the db
