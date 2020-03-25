@@ -12,9 +12,9 @@
 <body>
 <header class="bg-white black-80 tc pv4 avenir">
   <h1 class="mt2 mb0 baskerville i fw1 f1">TrekCheck</h1>
-  {% comment %} <h2 class="mt2 mb0 f6 fw4 ttu tracked">Lords of Might and Magic</h2> {% endcomment %}
+
     <nav id="site-nav" class="bt bb tc mw10 center mt4">
-        {% comment %} <ol class="navList"> {% endcomment %}
+ 
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'capstoneapp:home' %}">Home</a>
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'capstoneapp:inventory' %}">Inventory</a>
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'capstoneapp:trips' %}">Trips</a>
@@ -25,7 +25,7 @@
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'capstoneapp:register' %}">Register</a>
 
             {% endif %}
-        {% comment %} </ol> {% endcomment %}
+
     </nav>
 </header>
     <main class="main-content pa4 black-80">

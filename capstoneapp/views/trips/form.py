@@ -8,8 +8,6 @@ from capstoneapp.models import Brand
 from capstoneapp.models import Category
 from capstoneapp.models import Customer
 
-# from .trip_details import get_trip
-
 
 def get_trip(trip_id):
     

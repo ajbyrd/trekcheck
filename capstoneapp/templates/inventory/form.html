@@ -14,19 +14,13 @@
     {% endif %}
     <h1 class="f4 fw6 ph0 mh0">Inventory Item</h1>
         {% csrf_token %}
-        {% comment %} <div>
-            <label for="brand_name">Brand: </label>
-            <input id="brand_name" type="text" name="brand_name" value="{{ item.brand.brand_name }}">
-        </div> {% endcomment %}
+
         <fieldset class="ba b--transparent ph0 mh0">
         <div class="mt3">
             <label class="db fw6 lh-copy f6" for="model_name">Model Name: </label>
             <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
         </div>
-        {% comment %} <div>
-            <label for="category_name">Category: </label>
-            <input id="category_name" type="text" name="category_name" value="{{ item.category.category_name }}">
-        </div> {% endcomment %}
+
       <div class="mt3">
             <label class="db fw6 lh-copy f6" for="category_name">Category: </label>
             <select  class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"id="category_name" type="text" name="category_name">

@@ -38,7 +38,7 @@ def item_details(request, item_id):
             # item_to_update.image_path = form_data['image_path']
             item_to_update.brand_id = form_data['brand_name']
             item_to_update.category_id = form_data['category_name']            
-            # item_to_update.user = request.user.id           
+             
 
 
             # # Save the change to the db

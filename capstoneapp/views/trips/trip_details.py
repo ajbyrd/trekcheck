@@ -55,13 +55,7 @@ def trip_details(request, trip_id):
             "actual_method" in form_data
             and form_data["actual_method"] == "DELETE"
         ):
-            # with sqlite3.connect(Connection.db_path) as conn:
-            #     db_cursor = conn.cursor()
-
-            #     db_cursor.execute("""
-            #         DELETE FROM capstoneapp_book
-            #         WHERE id = ?
-            #     """, (book_id,))
+ 
                 
             trip = Trip.objects.get(pk=trip_id)
             trip.delete()
