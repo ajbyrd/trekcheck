@@ -10,25 +10,29 @@
 </head>
 
 <body>
-<div class='tc'>
+<div class="center mw5 mw6-ns br3 hidden ba b--black-10 mv4">
     <section id="trip-details">
-        <h1>{{ trip.trip_name }} </h1>
-        <h2>{{ trip.trip_date }}</h2>
+        <h1 class="f2 bg-near-white br3 br--top black-60 mv0 pv2 ph3">{{ trip.trip_name }} </h1>
+        <div class="pa3 bt b--black-10">
+        <h2 class= 'tc'>{{ trip.trip_date }}</h2>
     {% for trip_item in trip_items %}
         <div>{{trip_item.item.category}}: {{ trip_item.item.brand}} {{ trip_item.item}}</div>
-        <div> Weight = {{trip_item.item.weight}}
-     </div>
+        {% comment %} <div> Weight = {{trip_item.item.weight}}
+     </div> {% endcomment %}
+    
     {% endfor %}
 
 <div>
 Total Weight = {{trip_weight}}
 </div>
-    
 
 
     </section>
 
-    <section class='measure center pa3'  id="item-actions">
+    </div>
+    <section class='tc  measure center pa3'  id="item-actions">
+
+    <div style="display: flex;" >
         <form  onclick="return confirm('Are you sure you want to delete this trip?')" action="{% url 'capstoneapp:trip' trip.id %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="actual_method" value="DELETE">
@@ -39,6 +43,8 @@ Total Weight = {{trip_weight}}
             {% csrf_token %}
             <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
         </form>
+    </div>
+
 
         <form action="{% url 'capstoneapp:trip_items_list' trip.id %}"  method="post">
             {% csrf_token %}
