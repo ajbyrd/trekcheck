@@ -11,6 +11,11 @@ def trip_item_weight_sum(trip_id):
     
     trip_item_weight_sum= TripItem.objects.filter(trip_id = trip_id).aggregate(Sum('item_id__weight'))['item_id__weight__sum']
     
+    if (trip_item_weight_sum):
+        round(trip_item_weight_sum,2)
+    else:
+        trip_item_weight_sum = 0
+
     return trip_item_weight_sum
 
 
@@ -20,7 +25,7 @@ def trip_details(request, trip_id):
         all_items = InventoryItem.objects.filter(user__user_id = request.user.id)
         trip = Trip.objects.get(pk=trip_id)
         trip_items = TripItem.objects.filter(trip_id = trip_id)
-        trip_weight = trip_item_weight_sum(trip_id)
+        trip_weight = round(trip_item_weight_sum(trip_id), 2)
         template_name = 'trips/trip_detail.html'
         return render(request, template_name, {'trip': trip,
         'trip_items': trip_items, 'all_items': all_items, 'trip_weight': trip_weight})

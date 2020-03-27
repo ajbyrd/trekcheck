@@ -9,13 +9,13 @@
  <div class="tc avenir">
     <h1 >Gear Inventory</h1>
 
-<form  action="{% url 'capstoneapp:inventoryform' %}"><button class="f5 center no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Item</button></form>
+<form  action="{% url 'capstoneapp:inventoryform' %}"><button class="f5 center bg-white no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Item</button></form>
 </div>
-    <div class='cf w-100 pa2-ns'>
+    <div class='cf flex flex-row flex-wrap w-100 pa2-ns'>
     {% for item in all_items %}
-        <article  class='avenir tc center mw5 mw6-ns br3 hidden ba b--black-10 mv4'>
+        <article  class='avenir w-100 bg-white tc center mw5 mw6-ns br3 hidden ba b--black-10 mv4'>
            <h2 class='f4 bg-near-white br3 br--top black-70 mv0 pv2 ph3'><a  href="{% url 'capstoneapp:item' item.id %}">{{item.brand}} {{ item.model_name }} </a></h2>
-            <div class="pa3 bg-near-white br3 br--bottom bt b--black-10">
+            <div class="pa3  br3 br--bottom bt b--black-10">
               <p class="f6 f5-ns lh-copy measure">{{item.description}}</p>  
             </div> 
         </article>

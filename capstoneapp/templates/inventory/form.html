@@ -8,22 +8,18 @@
 <body>
 
     {% if item.id is not None %}
-        <form class="measure center" action="{% url 'capstoneapp:item' item.id %}" method="post">
+        <form class="measure avenir center" action="{% url 'capstoneapp:item' item.id %}" method="post">
     {% else %} 
-        <form class="measure center" action="{% url 'capstoneapp:inventory' %}" method="post">
+        <form class="measure avenir center" action="{% url 'capstoneapp:inventory' %}" method="post">
     {% endif %}
-    <h1 class="f4 fw6 ph0 mh0">Inventory Item</h1>
+    <h1 class="f4 tc fw6 ph0 mh0">Inventory Item</h1>
         {% csrf_token %}
 
-        <fieldset class="ba b--transparent ph0 mh0">
-        <div class="mt3">
-            <label class="db fw6 lh-copy f6" for="model_name">Model Name: </label>
-            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
-        </div>
+        <fieldset class="ba  b--transparent ph0 mh0">
 
       <div class="mt3">
             <label class="db fw6 lh-copy f6" for="category_name">Category: </label>
-            <select  class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"id="category_name" type="text" name="category_name">
+            <select  class="pa2 bg-white input-reset ba  hover-bg-black hover-white w-100" id="category_name"  type="text" name="category_name">
                 {% for category in all_categories %}
                 <option {% if category.id == item.category_id %}selected{% endif %}  value="{{ category.id }}">
                     {{ category.category_name }}</option>
@@ -32,7 +28,7 @@
         </div> 
       <div class="mt3">
             <label class="db fw6 lh-copy f6" for="brand_name">Brand: </label>
-            <select class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="brand_name" type="text" name="brand_name">
+            <select class="pa2 input-reset ba bg-white hover-bg-black hover-white w-100" id="brand_name" type="text" name="brand_name">
                 {% for brand in all_brands %}
                 <option {% if brand.id == item.brand_id %}selected{% endif %} value="{{ brand.id }}">
                     {{ brand.brand_name }}</option>
@@ -40,12 +36,16 @@
             </select>
         </div>  
         <div class="mt3">
+            <label class="db fw6 lh-copy f6" for="model_name">Model Name: </label>
+            <input class="pa2 bg-white input-reset ba hover-bg-black hover-white w-100" placeholder="model name" id="model_name" type="text" name="model_name" value="{{ item.model_name }}">
+        </div>
+        <div class="mt3">
             <label class="db fw6 lh-copy f6" for="description">Description: </label>
-            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="description" type="text" name="description" value="{{ item.description }}">
+            <input class="pa2 input-reset ba bg-white hover-bg-black hover-white w-100" placeholder="description" id="description" type="text" name="description" value="{{ item.description }}">
         </div>
         <div class="mt3">
             <label class="db fw6 lh-copy f6" for="weight">Weight: </label>
-            <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="weight" type="float" name="weight" value="{{ item.weight }}">
+            <input class="pa2 input-reset ba bg-white hover-bg-black hover-white w-100" placeholder="weight" id="weight" type="float" name="weight" value="{{ item.weight }}">
             </div>
         </fieldset>
        {% comment %} <div>
@@ -55,20 +55,20 @@
 
         {% if item.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
-            <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Update" />
+            <input class="b ph3 pv2 input-reset bg-animate hover-white hover-bg-black ba b--black bg-white grow pointer f6 dib" type="submit" value="Update" />
         {% else %}
-            <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib tc" type="submit" value="Create" />
+            <input class="b ph3 pv2 input-reset bg-animate hover-white hover-bg-black ba b--black bg-white grow pointer f6 dib tc" type="submit" value="Create" />
         {% endif %}
 
     </form>
 
-<form class="tc pa3" action="{% url 'capstoneapp:categoryform' %}">
-    <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Category</button>
+<form class="tc avenir pa3" action="{% url 'capstoneapp:categoryform' %}">
+    <button class="f5 bg-white  no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Category</button>
 </form> 
 
 
-<form class="tc" action="{% url 'capstoneapp:brandform' %}">
-    <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Brand</button>
+<form class="tc avenir" action="{% url 'capstoneapp:brandform' %}">
+    <button class="f5 bg-white no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Brand</button>
 </form> 
 
 </body>

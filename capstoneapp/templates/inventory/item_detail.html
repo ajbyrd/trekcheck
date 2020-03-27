@@ -21,12 +21,12 @@
         <form onclick="return confirm('Are you sure you want to delete this item?')" action="{% url 'capstoneapp:item' item.id %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="actual_method" value="DELETE">
-            <button class="f3 bg-near-white no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Delete</button>
+            <button class="f3 bg-white no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Delete</button>
         </form>
 
         <form action="{% url 'capstoneapp:inventory_edit_form' item.id %}">
             {% csrf_token %}
-            <button class="f3 no-underline bg-near-white black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
+            <button class="f3 no-underline bg-white black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
         </form>
     </div>
     </section>

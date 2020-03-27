@@ -37,7 +37,7 @@ Total Weight = {{trip_weight}} lbs
 
         <form  action="{% url 'capstoneapp:trip_edit_form' trip.id %}" method="GET">
             {% csrf_token %}
-            <button class="f3 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
+            <button class="f3 no-underline bg-white black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
         </form>
     </div>
 
@@ -49,7 +49,7 @@ Total Weight = {{trip_weight}} lbs
                 <option value="{{item.id}}">{{item.category}}: {{item.brand}} {{item.model_name}}</option>
                 {% endfor %}
             </select>
-            <button class="f3 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center ma3 pa3 ba border-box mr4">Add Item to Gear List</button>
+            <button class="f3 bg-white no-underline black bg-animate hover-bg-black hover-white inline-flex items-center ma3 pa3 ba border-box mr4">Add Item to Gear List</button>
         </form>  
     </div>
     
