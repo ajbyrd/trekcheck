@@ -10,52 +10,54 @@
 </head>
 
 <body>
-<div class="center mw5 mw6-ns br3 hidden ba b--black-10 mv4">
+<div class="center bg-white mw5 mw6-ns br3 hidden ba b--black-10 mv4">
     <section id="trip-details">
-        <h1 class="f2 bg-near-white br3 br--top black-60 mv0 pv2 ph3">{{ trip.trip_name }} </h1>
-        <div class="pa3 bt b--black-10">
+        <h1 class="f2 tc bg-near-white br3 avenir br--top black-60 mv0 pv2 ph3">{{ trip.trip_name }} </h1>
+        <div class="pa2 bt avenir b--black-10">
         <h2 class= 'tc'>{{ trip.trip_date }}</h2>
     {% for trip_item in trip_items %}
-        <div>{{trip_item.item.category}}: {{ trip_item.item.brand}} {{ trip_item.item}}</div>
+        <div class='f4 flex justify-between'>{{trip_item.item.category}}: <div>{{ trip_item.item.brand}} {{ trip_item.item}}</div>
+        
+        </div>
         {% comment %} <div> Weight = {{trip_item.item.weight}}
      </div> {% endcomment %}
     
     {% endfor %}
 
-<div>
-Total Weight = {{trip_weight}}
+<div class='f4 tc pt4 avenir'>
+Total Weight = {{trip_weight}} lbs
 </div>
 
 
     </section>
 
     </div>
-    <section class='tc  measure center pa3'  id="item-actions">
+    <section class='tc avenir flex-column content-around measure center pa1'  id="item-actions">
 
-    <div style="display: flex;" >
+    <div class="flex items-center justify-around pa2">
         <form  onclick="return confirm('Are you sure you want to delete this trip?')" action="{% url 'capstoneapp:trip' trip.id %}" method="POST">
             {% csrf_token %}
             <input type="hidden" name="actual_method" value="DELETE">
-            <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Delete</button>
+            <button class="f3 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Delete</button>
         </form> 
 
         <form  action="{% url 'capstoneapp:trip_edit_form' trip.id %}" method="GET">
             {% csrf_token %}
-            <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
+            <button class="f3 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Edit</button>
         </form>
     </div>
 
-
-        <form action="{% url 'capstoneapp:trip_items_list' trip.id %}"  method="post">
+    <div >
+        <form action="{% url 'capstoneapp:trip_items_list' trip.id %}" class="flex-column items-center content-between pa2" method="post">
             {% csrf_token %}
             <select class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="item" type="text" name="item">
                 {% for item in all_items %}
                 <option value="{{item.id}}">{{item.category}}: {{item.brand}} {{item.model_name}}</option>
                 {% endfor %}
             </select>
-            <button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Item to Gear List</button>
+            <button class="f3 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center ma3 pa3 ba border-box mr4">Add Item to Gear List</button>
         </form>  
-
+    </div>
     
     </section> 
     </div>

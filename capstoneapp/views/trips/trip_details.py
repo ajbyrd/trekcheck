@@ -10,7 +10,7 @@ from django.db.models import Sum
 def trip_item_weight_sum(trip_id):
     
     trip_item_weight_sum= TripItem.objects.filter(trip_id = trip_id).aggregate(Sum('item_id__weight'))['item_id__weight__sum']
-    print(trip_item_weight_sum)
+    
     return trip_item_weight_sum
 
 
