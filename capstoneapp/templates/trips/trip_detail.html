@@ -2,12 +2,6 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Trip Details</title>
-</head>
 
 <body>
 <div class="center bg-white mw5 mw6-ns br3 hidden ba b--black-10 mv4">
@@ -50,7 +44,7 @@ Total Weight = {{trip_weight}} lbs
     <div >
         <form action="{% url 'capstoneapp:trip_items_list' trip.id %}" class="flex-column items-center content-between pa2" method="post">
             {% csrf_token %}
-            <select class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" id="item" type="text" name="item">
+            <select class="pa2 input-reset ba bg-near-white hover-bg-black hover-white w-100" id="item" type="text" name="item">
                 {% for item in all_items %}
                 <option value="{{item.id}}">{{item.category}}: {{item.brand}} {{item.model_name}}</option>
                 {% endfor %}
@@ -64,6 +58,5 @@ Total Weight = {{trip_weight}} lbs
 
 </body>
 
-</html>
 
 {% endblock %}
