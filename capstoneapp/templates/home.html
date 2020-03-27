@@ -1,5 +1,13 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
-<h1 class="tc">Welcome to TrekCheck</h1>
+<body >
+<div class="tc">
+<h1 class=" center avenir f1 f2-m f1-l fw2 black-90 mv3">Welcome to TrekCheck</h1>
+
+<form class="center" action="{% url 'capstoneapp:trips' %}">
+    <button class="f2 avenir bg-white no-underline black bg-animate hover-bg-black hover-white ma5 inline-flex items-center pa3 ba border-box mr4">Go to my trips</button>
+</form> 
+</div>
+</body>
 {% endblock content %}
